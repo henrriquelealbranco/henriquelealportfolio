@@ -1,271 +1,81 @@
 import {
-  frontend,
-  backend,
-  ux,
-  prototyping,
-  javascript,
-  typescript,
-  html,
-  css,
-  reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  git,
-  figma,
-  docker,
-  postgresql,
-  rubyrails,
-  graphql,
-  komikult,
-  leaderboard,
-  math,
-  movie,
-  nyeusi,
-  space,
-  coverhunt,
-  dcc,
-  kelhel,
-  microverse,
+  frontend, backend, ux, prototyping, javascript, typescript, html, css,
+  reactjs, tailwind, nodejs, git, postgresql, alexCoutinho, imobPro,
+  espacoAluno, gabrielCoraiola, manguebras, drPericias, vellum, marfi,
+  excellence, raquelRomano,
 } from '../assets';
 
 export const navLinks = [
-  {
-    id: 'about',
-    title: 'About',
-  },
-  {
-    id: 'projects',
-    title: 'Projects',
-  },
-  {
-    id: 'contact',
-    title: 'Contact',
-  },
+  { id: 'about', title: 'Sobre' },
+  { id: 'projects', title: 'Projetos' },
+  { id: 'contact', title: 'Contato' },
 ];
 
 const services = [
-  {
-    title: 'Frontend Developer',
-    icon: frontend,
-  },
-  {
-    title: 'Backend Developer',
-    icon: backend,
-  },
-  {
-    title: 'UI/UX Design',
-    icon: ux,
-  },
-  {
-    title: 'Software Prototyping',
-    icon: prototyping,
-  },
+  { title: 'Sites comerciais', icon: frontend },
+  { title: 'Sistemas web', icon: backend },
+  { title: 'Experiência e interface', icon: ux },
+  { title: 'IA e automação', icon: prototyping },
 ];
 
 const technologies = [
-  {
-    name: 'HTML 5',
-    icon: html,
-  },
-  {
-    name: 'CSS 3',
-    icon: css,
-  },
-  {
-    name: 'JavaScript',
-    icon: javascript,
-  },
-  {
-    name: 'TypeScript',
-    icon: typescript,
-  },
-  {
-    name: 'React JS',
-    icon: reactjs,
-  },
-  {
-    name: 'Redux Toolkit',
-    icon: redux,
-  },
-  {
-    name: 'Tailwind CSS',
-    icon: tailwind,
-  },
-  {
-    name: 'Node JS',
-    icon: nodejs,
-  },
-  {
-    name: 'Rails',
-    icon: rubyrails,
-  },
-  {
-    name: 'graphql',
-    icon: graphql,
-  },
-  {
-    name: 'postgresql',
-    icon: postgresql,
-  },
-  {
-    name: 'git',
-    icon: git,
-  },
-  {
-    name: 'figma',
-    icon: figma,
-  },
-  {
-    name: 'docker',
-    icon: docker,
-  },
-];
-
-const experiences = [
-  {
-    title: 'Front-End Developer',
-    company_name: 'Cover Hunt',
-    icon: coverhunt,
-    iconBg: '#333333',
-    date: 'Aug 2021 - Feb 2022',
-  },
-  {
-    title: 'Mentor (Volunteer)',
-    company_name: 'Microverse',
-    icon: microverse,
-    iconBg: '#333333',
-    date: 'Mar 2022 - May 2022',
-  },
-  {
-    title: 'Junior Software Engineer',
-    company_name: 'Kelhel',
-    icon: kelhel,
-    iconBg: '#333333',
-    date: 'May 2022 - Oct 2022',
-  },
-  {
-    title: 'Full Stack Developer',
-    company_name: 'Diversity Cyber Council',
-    icon: dcc,
-    iconBg: '#333333',
-    date: 'Sep 2022 - Present',
-  },
+  { name: 'JavaScript', icon: javascript },
+  { name: 'TypeScript', icon: typescript },
+  { name: 'React', icon: reactjs },
+  { name: 'Node.js', icon: nodejs },
+  { name: 'Tailwind CSS', icon: tailwind },
+  { name: 'PostgreSQL', icon: postgresql },
+  { name: 'HTML', icon: html },
+  { name: 'CSS', icon: css },
+  { name: 'Git', icon: git },
 ];
 
 const projects = [
   {
-    id: 'project-1',
-    name: 'KomiKult',
-    description: 'A comic characters list app that displays Marvel characters.',
-    tags: [
-      {
-        name: 'react',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'mongodb',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'tailwind',
-        color: 'pink-text-gradient',
-      },
-    ],
-    image: komikult,
-    repo: 'https://github.com/shaqdeff/KomiKult',
-    demo: 'https://shaqdeff.github.io/KomiKult/',
+    id: 'project-1', name: 'Alex Coutinho + ImobPro', category: 'Portal e sistema imobiliário',
+    description: 'Um ecossistema imobiliário completo: portal corporativo para imóveis e uma plataforma de gestão com CRM, pipeline, locações, financeiro e automações.',
+    tags: ['Next.js', 'TypeScript', 'Supabase', 'IA'], image: alexCoutinho, secondaryImage: imobPro,
   },
   {
-    id: 'project-2',
-    name: 'Leaderboard',
-    description:
-      'A leaderboard list app that displays scores submitted by different players.',
-    tags: [
-      {
-        name: 'react',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'restapi',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'scss',
-        color: 'pink-text-gradient',
-      },
-    ],
-    image: leaderboard,
-    repo: 'https://github.com/shaqdeff/Leaderboard',
-    demo: 'https://shaqdeff.github.io/Leaderboard/',
+    id: 'project-2', name: 'Espaço do Aluno', category: 'Plataforma educacional',
+    description: 'Experiência acolhedora para estudantes, com atividades, conteúdos, acompanhamento emocional e painel demonstrativo para a equipe escolar.',
+    tags: ['Next.js', 'TypeScript', 'UX', 'Playwright'], image: espacoAluno,
   },
   {
-    id: 'project-3',
-    name: 'Math Magicians',
-    description: 'This is a single-page calculator app built with React',
-    tags: [
-      {
-        name: 'nextjs',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'supabase',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'css',
-        color: 'pink-text-gradient',
-      },
-    ],
-    image: math,
-    repo: 'https://github.com/shaqdeff/Math-Magicians',
-    demo: 'https://inspiring-medovik-37d3b3.netlify.app/',
+    id: 'project-3', name: 'Gabriel Coraiola Imóveis', category: 'Plataforma imobiliária',
+    description: 'Catálogo mobile-first com filtros, páginas de imóveis, contato direto por WhatsApp e painel administrativo para publicação e gestão.',
+    tags: ['Next.js', 'Supabase', 'Cloudflare', 'Vitest'], image: gabrielCoraiola,
   },
   {
-    id: 'project-4',
-    name: 'Movie Metro',
-    description: `A single-page application that allows users to search for any movie or show's ratings and its details.`,
-    tags: [
-      {
-        name: 'nextjs',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'supabase',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'css',
-        color: 'pink-text-gradient',
-      },
-    ],
-    image: movie,
-    repo: 'https://github.com/shaqdeff/Movie-Metro',
-    demo: 'https://movie-metro.netlify.app/',
+    id: 'project-4', name: 'Manguebras', category: 'E-commerce automotivo',
+    description: 'Loja virtual especializada em linha diesel, com catálogo amplo, busca, filtros, carrinho persistente e orçamento integrado ao WhatsApp.',
+    tags: ['Next.js', 'TypeScript', 'Zustand', 'Zod'], image: manguebras,
   },
   {
-    id: 'project-5',
-    name: 'Nyeusi Fest Site',
-    description:
-      'This is a demo concert website for a music festival called Nyeusi.',
-    tags: [
-      {
-        name: 'nextjs',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'supabase',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'css',
-        color: 'pink-text-gradient',
-      },
-    ],
-    image: nyeusi,
-    repo: 'https://github.com/shaqdeff/Nyeusi-Fest-Site',
-    demo: 'https://shaqdeff.github.io/Nyeusi-Fest-Site/',
+    id: 'project-5', name: 'DR Perícias Trabalhista', category: 'Sistema técnico',
+    description: 'Plataforma segura para organizar documentos e rotinas de perícia trabalhista para peritos, assistentes técnicos e empresas.',
+    tags: ['Sistema web', 'Autenticação', 'Documentos', 'SST'], image: drPericias,
+  },
+  {
+    id: 'project-6', name: 'Véllum', category: 'IA e automação',
+    description: 'Presença digital para apresentar soluções de inteligência artificial, integração de sistemas, automação de processos e software sob medida.',
+    tags: ['IA', 'Automação', 'SEO', 'UX'], image: vellum,
+  },
+  {
+    id: 'project-7', name: 'MARFI Refrigeração', category: 'Landing page comercial',
+    description: 'Site comercial para serviços de refrigeração e climatização, com projetos, diferenciais técnicos e conversão direta por WhatsApp.',
+    tags: ['JavaScript', 'SEO', 'Schema.org', 'Conversão'], image: marfi,
+  },
+  {
+    id: 'project-8', name: 'Excellence Marmoraria', category: 'Site comercial local',
+    description: 'Site responsivo para apresentar serviços, materiais, avaliações e conduzir clientes de Guarapuava até o orçamento.',
+    tags: ['Design responsivo', 'SEO local', 'WhatsApp'], image: excellence,
+  },
+  {
+    id: 'project-9', name: 'Raquel Romano', category: 'Presença profissional',
+    description: 'Site autoral para clínica, formação e articulação com escolas, com narrativa sensível, serviços e agendamento organizado.',
+    tags: ['Design autoral', 'Conteúdo', 'SEO local'], image: raquelRomano,
   },
 ];
 
-export { services, technologies, experiences, projects };
+export { services, technologies, projects };
