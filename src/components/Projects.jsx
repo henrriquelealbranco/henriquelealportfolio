@@ -15,7 +15,7 @@ const ProjectCard = ({ id, name, category, description, tags, image, secondaryIm
       tabIndex="0"
       onKeyDown={(event) => (event.key === 'Enter' || event.key === ' ') && handleClick(id)}
       aria-expanded={isActive}>
-      <img src={image} alt={`Captura do projeto ${name}`} className="absolute inset-0 h-full w-full object-cover object-top" />
+      <img src={image} alt={`Captura do projeto ${name}`} className="absolute inset-0 h-full w-full object-cover object-top" loading="lazy" />
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-black/10" />
 
       {!isActive ? (
@@ -38,19 +38,59 @@ const ProjectCard = ({ id, name, category, description, tags, image, secondaryIm
   );
 };
 
+const MobileProjectCard = ({ name, category, description, tags, image, secondaryImage, index }) => (
+  <motion.article
+    variants={fadeIn('up', 'spring', index * 0.05, 0.65)}
+    className="mobile-project-card">
+    <div className="mobile-project-media">
+      <img
+        src={image}
+        alt={`Captura do projeto ${name}`}
+        className="mobile-project-cover"
+        loading="lazy"
+      />
+      <div className="mobile-project-scrim" />
+      {secondaryImage && (
+        <img
+          src={secondaryImage}
+          alt={`Tela complementar do projeto ${name}`}
+          className="mobile-project-preview"
+          loading="lazy"
+        />
+      )}
+      <span className="mobile-project-number" aria-hidden="true">
+        {String(index + 1).padStart(2, '0')}
+      </span>
+    </div>
+
+    <div className="mobile-project-content">
+      <p className="mobile-project-category">{category}</p>
+      <h3 className="mobile-project-title">{name}</h3>
+      <p className="mobile-project-description">{description}</p>
+      <div className="mobile-project-tags" aria-label="Tecnologias utilizadas">
+        {tags.map((tag) => <span key={tag} className="project-tag">{tag}</span>)}
+      </div>
+    </div>
+  </motion.article>
+);
+
 const Projects = () => {
   const [active, setActive] = useState('project-1');
   return (
-    <div className="-mt-[6rem]">
+    <div className="mt-0 sm:-mt-[6rem]">
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Projetos selecionados</p>
         <h2 className={styles.sectionHeadTextLight}>Cases reais.</h2>
       </motion.div>
-      <motion.p variants={fadeIn('', '', 0.1, 1)} className="mt-4 max-w-3xl text-[18px] leading-[30px] text-taupe">
-        Sites, plataformas e sistemas criados para operações reais. Clique em um projeto para expandir a história e as tecnologias utilizadas.
+      <motion.p variants={fadeIn('', '', 0.1, 1)} className="mt-4 max-w-3xl text-[15px] leading-6 text-taupe sm:text-[18px] sm:leading-[30px]">
+        Sites, plataformas e sistemas criados para operações reais. <span className="hidden md:inline">Clique em um projeto para expandir a história e as tecnologias utilizadas.</span>
       </motion.p>
 
-      <motion.div variants={staggerContainer} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.12 }} className="project-rail mt-[50px] flex gap-5 overflow-x-auto pb-6">
+      <motion.div variants={staggerContainer} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.08 }} className="mobile-project-grid mt-8 grid gap-5 md:hidden">
+        {projects.map((project, index) => <MobileProjectCard key={project.id} index={index} {...project} />)}
+      </motion.div>
+
+      <motion.div variants={staggerContainer} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.12 }} className="project-rail mt-[50px] hidden gap-5 overflow-x-auto pb-6 md:flex">
         {projects.map((project, index) => <ProjectCard key={project.id} index={index} {...project} active={active} handleClick={setActive} />)}
       </motion.div>
     </div>
